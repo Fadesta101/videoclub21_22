@@ -11,10 +11,17 @@
     <title>Hello, world!</title>
   </head>
   <body>
+<<<<<<< HEAD
     @include('partials.navbar');
 
     <div class="container">
         @yield('content')
+=======
+    @include('partials.navbar')
+
+    <div class="container">
+      @yield('content')
+>>>>>>> 9e3bb6c76587c8deb1cabc8b84719d18565f437f
     </div>
 
     <!-- Optional JavaScript -->
@@ -23,4 +30,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 9e3bb6c76587c8deb1cabc8b84719d18565f437f
