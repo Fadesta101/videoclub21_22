@@ -27,6 +27,8 @@ Route::group(['prefix' => 'catalog'], function () {
 
     Route::get('/edit/{id}', [CatalogController::class, 'getEdit']);
 
+    Route::put('/changeRented/{id}', [CatalogController::class, 'changeRented'])->name('changeRented');
+
 });
 
 Route::get('/login', function () {

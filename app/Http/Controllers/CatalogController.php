@@ -33,4 +33,17 @@ class CatalogController extends Controller
             'id' => $id,
             'pelicula' => Movie::find($id)));
     }
+
+    public function changeRented($id)
+    {
+        $pelicula = Movie::find($id);
+        $pelicula->rented;
+        if ($pelicula->rented) {
+            $pelicula->rented = false;
+        }else{
+            $pelicula->rented = true;
+        }
+        $pelicula->save();
+        return redirect('/catalog/show/' . $id);
+    }
 }

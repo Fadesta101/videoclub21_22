@@ -26,16 +26,21 @@
                 Pel&iacute;cula en stock.
             @endif
         </p>
+        <form action="{{url('/catalog/changeRented/' . $pelicula->id)}}" method="post">
+        {{method_field('PUT')}}
+        @csrf
+        {{--route('changeRented', array('id' => $pelicula->id))--}}
+            @if($pelicula['rented'])
+                <input type="submit" class="btn btn-danger" value="Devolver pel&iacute;cula">
+            @else
+                <input type="submit" class="btn btn-primary" value="Alquilar pel&iacute;cula">
+            @endif
+            <a class="btn btn-warning" href="{{ url('/catalog/edit/' . $pelicula->id ) }}">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                Editar pel&iacute;cula</a>
+            <a class="btn btn-outline-info" href="{{ action('App\Http\Controllers\CatalogController@getIndex') }}">Volver al listado</a>
 
-        @if($pelicula['rented'])
-            <a class="btn btn-danger" href="#">Devolver pel&iacute;cula</a>
-        @else
-            <a class="btn btn-primary" href="#">Alquilar pel&iacute;cula</a>
-        @endif
-        <a class="btn btn-warning" href="{{ url('/catalog/edit/' . $pelicula->id ) }}">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-            Editar pel&iacute;cula</a>
-        <a class="btn btn-outline-info" href="{{ action('App\Http\Controllers\CatalogController@getIndex') }}">Volver al listado</a>
+        </form>
 
     </div>
 </div>
