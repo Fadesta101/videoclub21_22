@@ -10,7 +10,13 @@
         <a href="{{ url('/catalog/show/' . $pelicula->id ) }}">
             <img src="{{$pelicula['poster']}}" style="height:200px"/>
             <h4 style="min-height:45px;margin:5px 0 10px 0">
-                {{$pelicula['title']}}
+                @if ($pelicula->rented)
+                    <div style="color: red">
+                        {{$pelicula['title']}}
+                    </div>
+                @else
+                    {{$pelicula['title']}}
+                @endif
             </h4>
         </a>
 
