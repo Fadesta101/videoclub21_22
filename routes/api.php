@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Hash;
 
 Route::group( ['middleware' => 'auth:sanctum'],function () {
 
-    Route::apiResource('director', Director::class);
+    Route::apiResource('director', DirectorController::class);
 
     Route::apiResource('peliculas', MovieController::class)
     ->parameters([
