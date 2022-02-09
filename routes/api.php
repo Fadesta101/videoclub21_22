@@ -33,7 +33,7 @@ Route::group( ['middleware' => 'auth:sanctum'],function () {
 
     Route::get('/peliculas/search/{search}', [MovieController::class, 'search']);
 
-    Route::post('/api/directores/import', [DirectorController::class, 'import']);
+    Route::post('/directores/import', [DirectorController::class, 'import']);
 
 });
 
