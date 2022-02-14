@@ -36,6 +36,7 @@ class DirectorController extends Controller
     public function import()
     {
         $peliculas = \App\Models\Movie::all();
+
         foreach($peliculas as $pelicula) {
             $directorStr = $pelicula->director;
 
@@ -49,7 +50,8 @@ class DirectorController extends Controller
                     'apellidos' => $apellidos,
                 ]);
             }
-            $pelicula->director_id = $director->id;
+            $pelicula->director()->associate($director);
+            //$pelicula->director_id = $director->id;
             $pelicula->save();
         }
     }

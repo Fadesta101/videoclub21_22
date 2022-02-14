@@ -18,4 +18,9 @@ class Movie extends Model
         'rented',
         'synopsis'
     ];
+
+    public function director()
+    {
+        return $this->belongsTo(Director::class, 'director_id');
+    }
 }
